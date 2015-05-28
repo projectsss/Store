@@ -28,9 +28,9 @@ public class CategoriesController extends HttpServlet {
 			throws java.io.IOException, ServletException {
 		String type = request.getParameter("type");
 		List<String> genres = storeServiceImpl.getProductGenre(type);
-		String type = new ObjectMapper().writeValueAsString(genres);
+		String types = new ObjectMapper().writeValueAsString(genres);
 		PrintWriter pw = response.getWriter();
-		pw.print(type.toString());
+		pw.print(types.toString());
 		pw.close();
 
 	}
